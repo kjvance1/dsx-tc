@@ -55,7 +55,7 @@ networks:
     ipam:
       driver: default
       config:
-        - subnet: 172.16.238.0/24
+        - subnet: 172.16.251.0/24
 volumes:
   grafana-volume:
     external:
