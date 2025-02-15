@@ -13,8 +13,8 @@ export INFLUXDB_IMAGE="influxdb:2.7.1"
 export GRAFANA_IMAGE="grafana/grafana:10.2.0"
 
 export INFLUXDB_USER="influxdb"
-export INFLUXDB_PASSWD="cisco123"
-export INFLUXDB_ORG="Cisco"
+export INFLUXDB_PASSWD="SuperSecretPassword"
+export INFLUXDB_ORG="Optimus"
 export INFLUXDB_BUCKET="nxos_gnmi"
 export INFLUXDB_MDT_BUCKET="nxos_dialout"
 
@@ -28,29 +28,16 @@ TELEGRAF_CERT_PATH="$TELEGRAF_CONFIG/cert"
 GNMI_CERT_PASSWD="cisco123"
 pull_image=false # pull required image every time start
 
-# swtiches accept gNMI dial-in
-# exmaple
-switches=( "172.25.74.70:50050" \
-           "172.25.74.61:50050" \
-           "172.25.74.87:50050" \
-           "172.25.74.88:50050" \
-           "172.25.74.163:50050" \
-           "172.25.74.60:50050" \
-           "172.25.74.62:50050" \
-)
-#switches=()
-
-# user on swtich for authentication, need network-operator role at least
-gnmi_user="$(echo $GNMI_USER)"
-gnmi_password="$(echo $GNMI_PASSWORD)"
+#For GNMI Dialin
+switches=()
 
 #For telegraf certificate
-country=US
-state=CA
-locality="San Jose"
-organization=Cisco
-organizationalunit=BU
-email=telemetry@cisco.com
+country=GB
+state=Manchester
+locality="Congleton"
+organization=Optimus
+organizationalunit=Tech
+email=admin@email.com
 cn_mdt=telegraf
 cn_gnmi=gnmi
 cn_influxdb=influxdb
